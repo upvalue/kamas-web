@@ -1,6 +1,6 @@
 var DOSWASMSETTINGS = {
     CLOUDSAVEURL: "",
-    DEFAULTIMG: "/static/kamas.img",
+    DEFAULTIMG: window.location.href.indexOf('github.io') !== -1 ? "/kamas-web/static/kamas.img" : "/static/kamas.img",
 }
 
 var rando = Math.floor(Math.random() * Math.floor(100000));
