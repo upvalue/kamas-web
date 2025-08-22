@@ -26,7 +26,7 @@ class MyClass {
         this.exportFilesRequested = false;
         this.canvasHeight = 480;
         this.ram = 32;
-        this.initialHardDrive = 'hd_520';
+        this.initialHardDrive = 'hd -size 100';
         this.dosVersion = '7.1';
         this.iso_loaded = false;
         this.noIso = false;
@@ -163,6 +163,8 @@ class MyClass {
 
         $('#topPanel').show();
         $('#errorOuter').show();
+
+        this.btnDarkMode();
         
     }
 
@@ -212,6 +214,10 @@ class MyClass {
             this.canvasHeight = window.innerWidth / 2;
             console.log('detected mobile mode - canvasheight: ' + this.canvasHeight)
         }
+
+        // people aren't going to make 4mb of data on a web
+        // version of a 1991 dos outline editor. right?
+        this.initialHardDrive = 'hd -size 4';
     }
 
     //DRAG AND DROP ROM
